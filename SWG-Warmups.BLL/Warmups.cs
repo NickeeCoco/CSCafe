@@ -252,7 +252,17 @@ namespace SWG_Warmups.BLL
         //Given if the store is open, if it is the morning, and if it is the District Manager - determine if we should answer the phone or not.
         public bool PhoneSupport(bool isStoreOpen, bool isMorning, bool isDistrictManager)
         {
-            throw new NotImplementedException();
+            if(isDistrictManager)
+            {
+                return true;
+            }
+
+            if(isStoreOpen && !isMorning)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         //We installed a new machine that allows our customers to put in dollars and coins to pay for their purchase. 
