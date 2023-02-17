@@ -87,7 +87,23 @@ namespace SWG_Warmups.BLL
         //last letters (unless the letter is 'l' or 'e') from the name.
         public string QualityAssurance (string firstName)
         {
-            throw new NotImplementedException();
+            int lastLetterIndex = firstName.Length - 1;
+            string correctedFirstName = firstName;
+
+            if (firstName[0] != 'a' && firstName[0] == firstName[1])
+            {
+                correctedFirstName = firstName.Remove(0, 1);
+                lastLetterIndex--; // change index of last letter (word is shorter)
+            }
+
+            if (correctedFirstName[lastLetterIndex] != 'l' &&
+                correctedFirstName[lastLetterIndex] != 'e' &&
+                correctedFirstName[lastLetterIndex] == correctedFirstName[lastLetterIndex - 1])
+            {
+                correctedFirstName = correctedFirstName.Remove(lastLetterIndex);
+            }
+
+            return correctedFirstName;
         }
 
         //So some of our barista's liked to start throwing bad words into customer’s names (and say that is what the customer told them 
