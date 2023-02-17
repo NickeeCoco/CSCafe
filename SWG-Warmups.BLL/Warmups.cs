@@ -111,8 +111,16 @@ namespace SWG_Warmups.BLL
 
         //Given a person’s name, remove any instances of the phrase “bad” and return the name. (Note, a person’s name can be less than 3 letters)
         public string NoBadWords (string firstName)
-        {
-            throw new NotImplementedException();
+        {   
+            int badIndex = firstName.IndexOf("bad");
+
+            if(badIndex != -1)
+            {
+                string correctedFirstName = firstName.Remove(badIndex, 3);
+                return correctedFirstName;    
+            }
+
+            return firstName;
         }
 
         //For April Fool’s Day we decide to run a promotion where the label that prints off for the customer’s cup blows 
