@@ -297,7 +297,22 @@ namespace SWG_Warmups.BLL
         //the unknown letters as ‘-’ (minus sign)
         public string Hangman(string secretWord, char letterGuess)
         {
-            throw new NotImplementedException();
+            string revealedString = "";
+
+            for(int i = 0; i < secretWord.Length; i++)
+            {
+                if (secretWord[i] == letterGuess)
+                {
+                    revealedString += secretWord[i];
+                }
+
+                else
+                {
+                    revealedString += '-';
+                }
+            }
+
+            return revealedString;
         }
 
         //Hangman was such a hit they want us to add a new spin on it (literally). You will spin a wheel and get a point value. 
