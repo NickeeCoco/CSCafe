@@ -182,7 +182,17 @@ namespace SWG_Warmups.BLL
         //Given two arrays of integers, return the average rating of the two days.
         public double WeekendAverage(int[] saturdayResults, int[] sundayResults)
         {
-            throw new NotImplementedException();
+            int saturdaySumRatings = saturdayResults.Sum();
+            int sundaySumRatings = sundayResults.Sum();
+            int totalSumRatings = saturdaySumRatings + sundaySumRatings;
+
+            int saturdayNumberOfRatings = saturdayResults.Length;
+            int sundayNumberOfRatings = sundayResults.Length;
+            int totalNumberOfRatings = saturdayNumberOfRatings + sundayNumberOfRatings;
+
+            int totalAverage = totalSumRatings / totalNumberOfRatings;
+            
+            return totalAverage;
         }
 
         //We take customer service very seriously. If more than 3 people gave us a score of 3 or less in a given day, 
