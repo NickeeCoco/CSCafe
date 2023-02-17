@@ -220,7 +220,7 @@ namespace SWG_Warmups.BLL
         //Given an hour, return a boolean on if we need to change the coffee or not.
         public bool FreshCoffee (int hourofDay)
         {
-            throw new NotImplementedException();
+            return hourofDay % 2 == 0;
         }
 
         //Our normal staffing needs for the day are 6 people. During the winter time, we need 2 additional people to help 
