@@ -272,7 +272,20 @@ namespace SWG_Warmups.BLL
         //and number of pennies, return if we have been given enough money to make the purchase.
         public bool CashOnly(double itemPrice, int numberDollars, int numberQuarters, int numberDimes, int numberNickels, int numberPennies)
         {
-            throw new NotImplementedException();
+            decimal amountDollars = numberDollars;
+            decimal amountQuarters = numberQuarters * 0.25M;
+            decimal amountDimes = numberDimes * 0.10M;
+            decimal amountNickels = numberNickels * 0.05M;
+            decimal amountPennies = numberPennies * 0.01M;
+            decimal totalAmout = amountDollars + amountQuarters + amountDimes + amountNickels + amountPennies;
+
+            if(totalAmout >= (decimal) itemPrice)
+            {
+                return true;
+            }
+
+            return false;
+            
         }
 
         //Our customers have been getting bored while they wait for their coffee, so we have created a few fun little games 
