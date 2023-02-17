@@ -166,7 +166,15 @@ namespace SWG_Warmups.BLL
         //Given an array of integers, return true if the average satisfaction rating is greater than 8 or return false if it is not.
         public bool AreCustomersHappy(int[] surveyResults)
         {
-            throw new NotImplementedException();
+            double sumRatings = surveyResults.Sum();
+            double numberOfRatings = surveyResults.Length;
+
+            if(sumRatings / numberOfRatings < 8)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         //Our managers now want a weekend report giving us the average of both Saturday and Sunday’s surveys.
