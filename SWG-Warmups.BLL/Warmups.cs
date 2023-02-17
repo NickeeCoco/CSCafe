@@ -147,8 +147,17 @@ namespace SWG_Warmups.BLL
         //Given an array of integers, return the number of times an 8 or higher appears.
         public int CustomerSurvey(int[] surveyResults)
         {
-            throw new NotImplementedException();
+            int eightAndAbove = 0;
+            
+            for(int i = 0; i < surveyResults.Length; i++)
+            {
+                if (surveyResults[i] >= 8)
+                {
+                    eightAndAbove++;
+                }
+            }
 
+            return eightAndAbove;
         }
 
         //Each day our managers want us to report to them the average score of all completed surveys for a day and let them know 
