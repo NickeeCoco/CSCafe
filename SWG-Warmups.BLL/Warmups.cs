@@ -201,7 +201,17 @@ namespace SWG_Warmups.BLL
         //Given an array of integers, return true if a score of 3 or less appears more than 3 times, or false if it does not.
         public bool TooMuchUnsatisfaction(int[] surveyResults)
         {
-            throw new NotImplementedException();
+            int totalBadReviews = 0;
+
+            for(int i = 0; i < surveyResults.Length; i++)
+            {
+                if (surveyResults[i] <= 3) {
+                    totalBadReviews++;
+                }
+            }
+
+            return totalBadReviews >= 3;
+            
         }
 
         //One of the things a few of our customers commented on was the coffee did not taste fresh all the time. 
