@@ -130,7 +130,14 @@ namespace SWG_Warmups.BLL
         //Given a person’s name, expand the string like in the example. (See the unit tests for more examples)
         public string FunnyNameDay(string firstName)
         {
-            throw new NotImplementedException();
+            string funnyName = "";
+
+            for(int i = 0; i <= firstName.Length; i++)
+            {
+                funnyName += firstName.Substring(0, i);
+            }
+
+            return funnyName;
         }
 
         //On every receipt we give the customer a phone number to go fill out a survey and they press a number (1-10) to 
