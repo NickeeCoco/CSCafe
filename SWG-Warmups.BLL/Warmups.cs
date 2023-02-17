@@ -36,7 +36,23 @@ namespace SWG_Warmups.BLL
         //(Hint - a lower case letter and upper case letter are not equal to each other)
         public double RandomLetterDiscount(string Name, char specialLetter, int lettertoCheck, double orderTotal)
         {
-            throw new NotImplementedException();
+            int lastIndex = Name.Length - 1;
+
+            if (!string.IsNullOrEmpty(Name))
+            {
+                if (lettertoCheck > lastIndex)
+                {
+                    if (Name[lastIndex] == specialLetter)
+                    {
+                        return orderTotal * 0.50;
+                    }
+                }
+                else if (Name[lettertoCheck] == specialLetter)
+                {
+                    return orderTotal * 0.50;
+                }
+            }
+            return orderTotal;
         }
 
         //So sales are booming and everyone is having a fun morning guessing if they are going to get the discount or not. 
