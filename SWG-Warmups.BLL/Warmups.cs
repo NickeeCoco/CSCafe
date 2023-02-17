@@ -63,7 +63,21 @@ namespace SWG_Warmups.BLL
         //Given a person’s first name, return the name removing any instances of duplicate first letters or last letters from the name.
         public string CheckingForTypos(string firstName)
         {
-            throw new NotImplementedException();
+            int lastLetterIndex = firstName.Length - 1;
+            string correctedFirstName = firstName;
+
+            if (firstName[0] == firstName[1])
+            {
+                correctedFirstName = firstName.Remove(0, 1);
+                lastLetterIndex--; // change index of last letter (word is shorter)
+            }
+
+            if (correctedFirstName[lastLetterIndex] == correctedFirstName[lastLetterIndex - 1])
+            {
+                correctedFirstName = correctedFirstName.Remove(lastLetterIndex);
+            }
+
+            return correctedFirstName;
         }
 
         //So our typo plan worked, but barrista’s found out a bunch of Aaron, Bill, and Analee actually come into the shop. 
