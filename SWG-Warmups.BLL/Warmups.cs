@@ -16,7 +16,13 @@ namespace SWG_Warmups.BLL
         //(Hint - If no name is entered, then there is no chance of a discount for the customer.)
         public double NameoftheDay(string Name, string specialLetter, double orderTotal)
         {
-            throw new NotImplementedException();
+            if(Name.StartsWith(specialLetter))
+            {
+                return orderTotal * 0.50;
+            } else
+            {
+                return orderTotal;
+            }
         }
 
         //Too many people started lying about their names and profit margins started to shrink at the cafe. So marketing decided to 
