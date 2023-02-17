@@ -230,7 +230,19 @@ namespace SWG_Warmups.BLL
         //Given if it is the winter and if it is the weekend, return the number of staff we need.
         public int StaffingNeeds (bool isWinter, bool isWeekend)
         {
-            throw new NotImplementedException();
+            int staffNeeded = 6;
+
+            if(isWinter)
+            {
+                staffNeeded += 2;
+            }
+
+            if(isWeekend)
+            {
+                staffNeeded += 3;
+            }
+
+            return staffNeeded;
         }
 
         //If the store is closed, we do not answer the phone. If it is the morning time, we do not answer the phone because we are so busy. 
